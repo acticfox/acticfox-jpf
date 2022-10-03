@@ -17,8 +17,8 @@ import com.github.actic.extension.test.customer.client.CustomerDTO;
 import com.github.actic.extension.test.customer.client.CustomerServiceI;
 import com.github.actic.extension.test.customer.client.NoticeService;
 import com.github.actic.extension.test.customer.domain.CustomerType;
+import com.github.acticfox.common.api.result.ResultDTO;
 import com.github.acticfox.jpf.api.BizScenario;
-import com.zhichubao.common.api.result.ResultDTO;
 
 /**
  * ExtensionTest

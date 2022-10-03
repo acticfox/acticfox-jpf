@@ -11,8 +11,8 @@ import com.github.actic.extension.test.customer.app.extensionpoint.CustomerConve
 import com.github.actic.extension.test.customer.client.AddCustomerCmd;
 import com.github.actic.extension.test.customer.domain.CustomerEntity;
 import com.github.actic.extension.test.customer.infrastructure.DomainEventPublisher;
+import com.github.acticfox.common.api.result.ResultDTO;
 import com.github.acticfox.extension.ExtensionExecutor;
-import com.zhichubao.common.api.result.ResultDTO;
 
 /**
  * AddCustomerCmdExe
@@ -22,32 +22,31 @@ import com.zhichubao.common.api.result.ResultDTO;
 @Component
 public class AddCustomerCmdExe {
 
-	private Logger logger = LoggerFactory.getLogger(AddCustomerCmd.class);
+    private Logger logger = LoggerFactory.getLogger(AddCustomerCmd.class);
 
-	@Resource
-	private ExtensionExecutor extensionExecutor;
+    @Resource
+    private ExtensionExecutor extensionExecutor;
 
-	@Resource
-	private DomainEventPublisher domainEventPublisher;
+    @Resource
+    private DomainEventPublisher domainEventPublisher;
 
+    public ResultDTO<?> execute(AddCustomerCmd cmd) {
+        logger.info("Start processing command:" + cmd);
 
-	public ResultDTO<?> execute(AddCustomerCmd cmd) {
-		logger.info("Start processing command:" + cmd);
+        // validation
+        extensionExecutor.executeVoid(AddCustomerValidatorExtPt.class, cmd.getBizScenario(),
+            extension -> extension.validate(cmd));
 
-		// validation
-		extensionExecutor.executeVoid(AddCustomerValidatorExtPt.class, cmd.getBizScenario(),
-				extension -> extension.validate(cmd));
+        // Convert CO to Entity
+        CustomerEntity customerEntity = extensionExecutor.execute(CustomerConvertorExtPt.class, cmd.getBizScenario(),
+            extension -> extension.clientToEntity(cmd));
 
-		// Convert CO to Entity
-		CustomerEntity customerEntity = extensionExecutor.execute(CustomerConvertorExtPt.class, cmd.getBizScenario(),
-				extension -> extension.clientToEntity(cmd));
+        // Call Domain Entity for business logic processing
+        logger.info("Call Domain Entity for business logic processing..." + customerEntity);
+        customerEntity.addNewCustomer();
 
-		// Call Domain Entity for business logic processing
-		logger.info("Call Domain Entity for business logic processing..." + customerEntity);
-		customerEntity.addNewCustomer();
-
-		// domainEventPublisher.publish(new CustomerCreatedEvent());
-		logger.info("End processing command:" + cmd);
-		return ResultDTO.buildSuccessResult();
-	}
+        // domainEventPublisher.publish(new CustomerCreatedEvent());
+        logger.info("End processing command:" + cmd);
+        return ResultDTO.buildSuccessResult();
+    }
 }

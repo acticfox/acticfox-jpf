@@ -1,6 +1,6 @@
 package com.github.actic.extension.test.customer.client;
 
-import com.zhichubao.common.api.result.ResultDTO;
+import com.github.acticfox.common.api.result.ResultDTO;
 
 /**
  * CustomerServiceI

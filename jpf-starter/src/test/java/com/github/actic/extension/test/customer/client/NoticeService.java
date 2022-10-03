@@ -2,7 +2,7 @@ package com.github.actic.extension.test.customer.client;
 
 import java.util.List;
 
-import com.zhichubao.common.api.result.ResultDTO;
+import com.github.acticfox.common.api.result.ResultDTO;
 
 /**
  * CustomerServiceI

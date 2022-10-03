@@ -1,7 +1,7 @@
 package com.github.actic.extension.test.customer.app;
 
 import com.github.actic.extension.test.customer.client.CustomerCreatedEvent;
-import com.zhichubao.common.api.result.ResultDTO;
+import com.github.acticfox.common.api.result.ResultDTO;
 
 /**
  * CustomerCreatedEventHandler
@@ -11,8 +11,8 @@ import com.zhichubao.common.api.result.ResultDTO;
  */
 public class CustomerCreatedEventHandler {
 
-	public ResultDTO<?> execute(CustomerCreatedEvent customerCreatedEvent) {
-		System.out.println("customerCreatedEvent processed");
-		return null;
-	}
+    public ResultDTO<?> execute(CustomerCreatedEvent customerCreatedEvent) {
+        System.out.println("customerCreatedEvent processed");
+        return null;
+    }
 }

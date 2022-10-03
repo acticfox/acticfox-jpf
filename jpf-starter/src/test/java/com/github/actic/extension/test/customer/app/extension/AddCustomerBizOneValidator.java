@@ -4,8 +4,8 @@ import com.github.actic.extension.test.customer.app.extensionpoint.AddCustomerVa
 import com.github.actic.extension.test.customer.client.AddCustomerCmd;
 import com.github.actic.extension.test.customer.client.Constants;
 import com.github.actic.extension.test.customer.domain.CustomerType;
+import com.github.acticfox.common.api.exception.BusinessException;
 import com.github.acticfox.jpf.api.Extension;
-import com.zhichubao.common.api.exception.BusinessException;
 
 /**
  * AddCustomerBizOneValidator

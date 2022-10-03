@@ -1,8 +1,7 @@
 package com.github.actic.extension.test.customer.client;
 
 import com.github.actic.extension.test.customer.domain.CustomerType;
-import com.zhichubao.common.api.BaseObject;
-
+import com.github.acticfox.common.api.BaseObject;
 
 /**
  * CustomerDTO
@@ -11,31 +10,31 @@ import com.zhichubao.common.api.BaseObject;
  */
 public class CustomerDTO extends BaseObject {
 
-	private String companyName;
-	private String source; // advertisement, p4p, RFQ, ATM
-	private CustomerType customerType; // potential, intentional, important, vip
+    private String companyName;
+    private String source; // advertisement, p4p, RFQ, ATM
+    private CustomerType customerType; // potential, intentional, important, vip
 
-	public String getCompanyName() {
-		return companyName;
-	}
+    public String getCompanyName() {
+        return companyName;
+    }
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
-	public String getSource() {
-		return source;
-	}
+    public String getSource() {
+        return source;
+    }
 
-	public void setSource(String source) {
-		this.source = source;
-	}
+    public void setSource(String source) {
+        this.source = source;
+    }
 
-	public CustomerType getCustomerType() {
-		return customerType;
-	}
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
 
-	public void setCustomerType(CustomerType customerType) {
-		this.customerType = customerType;
-	}
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
+    }
 }

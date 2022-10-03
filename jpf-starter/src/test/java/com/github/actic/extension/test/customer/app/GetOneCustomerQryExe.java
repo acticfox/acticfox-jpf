@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.github.actic.extension.test.customer.client.CustomerDTO;
 import com.github.actic.extension.test.customer.client.GetOneCustomerQry;
-import com.zhichubao.common.api.result.ResultDTO;
+import com.github.acticfox.common.api.result.ResultDTO;
 
 /**
  * GetOneCustomerQryExe
@@ -15,7 +15,7 @@ import com.zhichubao.common.api.result.ResultDTO;
 @Component
 public class GetOneCustomerQryExe {
 
-	public ResultDTO<CustomerDTO> execute(GetOneCustomerQry getOneCustomerQry) {
-		return null;
-	}
+    public ResultDTO<CustomerDTO> execute(GetOneCustomerQry getOneCustomerQry) {
+        return null;
+    }
 }

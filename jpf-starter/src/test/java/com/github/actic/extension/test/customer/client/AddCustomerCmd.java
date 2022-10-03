@@ -1,7 +1,7 @@
 package com.github.actic.extension.test.customer.client;
 
+import com.github.acticfox.common.api.Command;
 import com.github.acticfox.jpf.api.BizScenario;
-import com.zhichubao.common.api.Command;
 
 import lombok.Data;
 
