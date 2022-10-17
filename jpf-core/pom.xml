@@ -54,7 +54,7 @@
 	</dependencies>
 	
 	 <build>
-	 	<finalName>jspf-core</finalName>
+	 	<finalName>jpf-core</finalName>
         <plugins>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
