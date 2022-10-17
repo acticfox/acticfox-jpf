@@ -47,19 +47,15 @@
 			<version>${acticfox-version}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<!-- 工具包 -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<scope>provided</scope>
 		</dependency>
-
 		<!-- 日志包 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
